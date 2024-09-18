@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drawing Board</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="options-cont">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="tools-cont scale-tools">
+      <img src="./icons/Pencil.svg" alt="" class="pencil" />
+      <img src="./icons/Eraser.svg" alt="" class="eraser" />
+      <img src="./icons/Download.svg" alt="" class="download" />
+      <img src="./icons/Upload.svg" alt="" class="upload" />
+      <img src="./icons/StickyNote.svg" alt="" class="sticky" />
+      <img src="./icons/Redo.svg" alt="" class="redo" />
+      <img src="./icons/Undo.svg" alt="" class="undo" />
+    </div>
+
+    <div class="pencil-tool-cont">
+      <div class="pencil-width-cont">
+        <input type="range" min="2" value="3" class="pencil-width" />
+      </div>
+      <div class="pencil-color-cont">
+        <div class="black pencil-color"></div>
+        <div class="red pencil-color"></div>
+        <div class="blue pencil-color"></div>
+      </div>
+    </div>
+
+    <div class="eraser-tool-cont">
+      <input type="range" min="2" value="3" class="eraser-width" />
+    </div>
+
+    <canvas></canvas>
+    <script
+      src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+      integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let socket = io.connect("http://localhost:3000")
+    </script>
+    <script src="./tool.js"></script>
+    <script src="./canvas.js"></script>
+  </body>
+</html>
